@@ -1,10 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 40% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -22,7 +25,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 217.2 91.2% 59.8%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -70,7 +66,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 217.2 91.2% 59.8%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -97,5 +93,114 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  .glass-card {
+    @apply bg-white/30 dark:bg-black/30 backdrop-blur-lg border border-white/20 dark:border-white/10 rounded-xl shadow-lg;
+  }
+
+  .skill-tag {
+    @apply text-xs px-2 py-1 rounded-full bg-accent/10 text-accent font-medium transition-all;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .prose {
+    @apply max-w-none leading-7;
+  }
+
+  .prose a {
+    @apply font-medium text-accent underline underline-offset-4;
+  }
+
+  .prose ul {
+    @apply my-6 ml-6 list-disc;
+  }
+
+  .prose ol {
+    @apply my-6 ml-6 list-decimal;
+  }
+
+  .prose blockquote {
+    @apply border-l-2 pl-6 italic;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-accent;
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent/40 rounded-full hover:bg-accent/60 transition-colors;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.section-divider {
+  @apply w-full h-px bg-gradient-to-r from-transparent via-border to-transparent my-8;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent/70;
+}
+
+.experience-item, .project-item, .education-item {
+  @apply opacity-0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
 }
