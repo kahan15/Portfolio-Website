@@ -1,10 +1,15 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { ErrorBoundary } from "react-error-boundary";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
-import { ParticleField } from "@/components/ThreeScene";
+
+// Create a fallback component for the particle field
+const ParticleFallback = () => (
+  <div className="fixed inset-0 -z-10 bg-gradient-to-b from-background/10 to-background/80" />
+);
 
 const Projects = () => {
   useEffect(() => {
@@ -53,7 +58,10 @@ const Projects = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <ParticleField />
+      
+      <ErrorBoundary FallbackComponent={ParticleFallback}>
+        <ParticleFallback />
+      </ErrorBoundary>
       
       <main className="flex-1 pt-24 pb-12">
         <div className="container mx-auto px-4">

@@ -16,10 +16,20 @@ const Footer = () => {
             <a href="mailto:kahanjash15@gmail.com" className="text-muted-foreground hover:text-accent transition-colors">
               Email
             </a>
-            <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+            <a 
+              href="https://www.linkedin.com/in/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-muted-foreground hover:text-accent transition-colors"
+            >
               LinkedIn
             </a>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+            <a 
+              href="https://github.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-muted-foreground hover:text-accent transition-colors"
+            >
               GitHub
             </a>
           </div>

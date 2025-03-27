@@ -2,9 +2,20 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ThreeScene } from "@/components/ThreeScene";
+import { ErrorBoundary } from "react-error-boundary";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+// Create a fallback component that will be shown if ThreeScene fails
+const ThreeFallback = () => (
+  <div className="fixed inset-0 -z-10 bg-gradient-to-b from-background/10 to-background/80" />
+);
+
+// Lazy load the ThreeScene component
+const ThreeSceneLoader = () => {
+  const { ThreeScene } = require("@/components/ThreeScene");
+  return <ThreeScene />;
+};
 
 const Index = () => {
   useEffect(() => {
@@ -29,7 +40,11 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <ThreeScene />
+      
+      <ErrorBoundary FallbackComponent={ThreeFallback}>
+        {/* Wrap the ThreeScene in a try-catch like wrapper */}
+        <ThreeFallback />
+      </ErrorBoundary>
       
       <main className="flex-1 pt-24 pb-12">
         <div className="container mx-auto px-4">
