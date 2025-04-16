@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss"
 
 export default {
@@ -20,7 +19,6 @@ export default {
     },
     extend: {
       colors: {
-        // More elegant and refined color palette
         primary: {
           DEFAULT: "#6B4EFF",  // Soft, elegant purple
           light: "#8B75FF",    // Lighter variant
@@ -43,9 +41,11 @@ export default {
           800: "#1F2937",      // Almost black
           900: "#111827",      // Deep dark gray
         },
+        border: {
+          DEFAULT: 'hsl(var(--border))',
+        },
       },
       fontFamily: {
-        // Add more elegant font families
         'sans': ['Inter', 'system-ui', 'sans-serif'],
         'display': ['Playfair Display', 'serif'],
         'mono': ['JetBrains Mono', 'monospace'],

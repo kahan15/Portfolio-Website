@@ -14,6 +14,7 @@
     --accent-foreground: 0 0% 100%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
+    --border: 240 5.9% 90%; // A light gray border color
   }
 
   .dark {
@@ -25,6 +26,7 @@
     --accent-foreground: 0 0% 100%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
+    --border: 240 10% 10%; // A different border color for dark mode if desired
   }
 }
 
