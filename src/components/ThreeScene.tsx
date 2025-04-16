@@ -3,8 +3,9 @@ import { Canvas } from "@react-three/fiber";
 import { useRef, Suspense } from "react";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import { motion } from "framer-motion";
+import { Vector3 } from "three";
 
-function Blob({ position = [0, 0, 0], color = "#6366f1" }) {
+function Blob({ position = [0, 0, 0], color = "#6366f1" }: { position?: [number, number, number], color?: string }) {
   const blobRef = useRef(null);
 
   return (
