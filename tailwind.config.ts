@@ -36,6 +36,11 @@ export default {
         },
         border: "hsl(var(--border))",
       },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
     },
   },
   plugins: [
