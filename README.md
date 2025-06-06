@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/5e56d858-a39d-4985-95e8-279c11333586
+**URL**: https://kahans-portfolio.onrender.com
 
 
 
