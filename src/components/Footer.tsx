@@ -20,7 +20,7 @@ const Footer = () => {
               Email
             </a>
             <a 
-              href="https://www.linkedin.com/in/kahan-jash" 
+              href="https://www.linkedin.com/in/kahan-jash-148477199" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-primary hover:text-primary-light transition-colors"

@@ -99,10 +99,10 @@ const Contact = () => {
                   <div className="glass-card p-6">
                     <h3 className="font-medium text-lg mb-2">Social Profiles</h3>
                     <div className="flex space-x-4 mt-2">
-                      <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">
+                      <a href="https://www.linkedin.com/in/kahan-jash-148477199" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">
                         LinkedIn
                       </a>
-                      <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">
+                      <a href="https://github.com/kahan15" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">
                         GitHub
                       </a>
                     </div>
