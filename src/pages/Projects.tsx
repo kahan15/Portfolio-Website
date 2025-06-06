@@ -5,6 +5,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
+import { ParticleField } from "@/components/ThreeScene";
 
 // Create a fallback component for the particle field
 const ParticleFallback = () => (
@@ -58,6 +59,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+      <ParticleField />
       
       <ErrorBoundary FallbackComponent={ParticleFallback}>
         <ParticleFallback />

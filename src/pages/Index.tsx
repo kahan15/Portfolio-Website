@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ParticleField } from "@/components/ThreeScene";
 
 // Create a fallback component that will be shown if ThreeScene fails
 const ThreeFallback = () => (
@@ -40,7 +41,8 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+      < ParticleField/>
+
       <ErrorBoundary FallbackComponent={ThreeFallback}>
         {/* Wrap the ThreeScene in a try-catch like wrapper */}
         <ThreeFallback />

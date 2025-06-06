@@ -28,7 +28,7 @@ const Footer = () => {
               LinkedIn
             </a>
             <a 
-              href="https://github.com/kahanjash" 
+              href="https://github.com/kahan15" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-primary hover:text-primary-light transition-colors"
