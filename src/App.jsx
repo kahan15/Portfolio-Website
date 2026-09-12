@@ -24,13 +24,12 @@ const SECTIONS = [
   { id: "contact", label: "Contact" },
 ];
 
-/* One project list, not two. The three strongest lead and carry an extra
-   detail line plus a status chip, so hierarchy comes from the density of real
-   content rather than from a large empty image frame. */
-const ALL_PROJECTS = [
-  ...selected.map((p) => ({ ...p, lead: true })),
-  ...projects.map((p) => ({ ...p, lead: false })),
-];
+/* One project list, not two. A card only leads if data.js marks it
+   `featured` — everything else renders identically. */
+const ALL_PROJECTS = [...selected, ...projects].map((p) => ({
+  ...p,
+  lead: !!p.featured,
+}));
 
 const reducedMotion = () =>
   typeof window !== "undefined" &&
@@ -327,9 +326,6 @@ export default function App() {
                     </a>
                   </li>
                 </ul>
-                <p className="hero-foot mono">
-                  <span className="settled">signal settled</span>
-                </p>
               </div>
             </section>
 
@@ -393,12 +389,14 @@ export default function App() {
                         <Title title={p.title} link={p.link} />
                       </h3>
                       {p.lead ? (
-                        <span className="mono status" data-status={p.status}>
-                          {p.status}
-                        </span>
-                      ) : (
+                        p.status ? (
+                          <span className="mono status" data-status={p.status}>
+                            {p.status}
+                          </span>
+                        ) : null
+                      ) : p.year ? (
                         <span className="mono card-year">{p.year}</span>
-                      )}
+                      ) : null}
                     </div>
                     <p>{p.summary}</p>
                     {p.lead && p.detail && (

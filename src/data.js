@@ -26,10 +26,12 @@ export const bio = {
   ],
 };
 
-// Three, with screenshots once you have them. Put images in /public and set `image`.
+// Set `featured: true` on any project to give it a full-height card with its
+// extra `detail` paragraph. Everything else renders as a standard card.
 export const selected = [
   {
     title: "Territory Run",
+    featured: true,
     status: "In progress",
     summary:
       "A GPS running game. Close a loop, claim the ground inside it, defend it against friends. Thirty-day claim expiry, friends-only leaderboard.",
@@ -41,7 +43,7 @@ export const selected = [
   },
   {
     title: "Limit Order Book Simulator",
-    status: "Live",
+    status: "",
     summary:
       "Exchange matching semantics in the browser, running on synthetic order flow or live market data.",
     detail:
@@ -52,15 +54,13 @@ export const selected = [
   },
   {
     title: "Workflow Lens",
-    status: "Live",
+    status: "",
     summary:
       "A CI configuration analyzer. Parses GitHub Actions YAML and flags missing caches, oversized runners, and absent concurrency cancels, with severity, a fix snippet, and estimated time saved.",
     detail:
       "Scaffolded with an agent in about an hour, then audited. Two defects had shipped that ran without erroring: findings matched raw string content instead of parser line positions, and a caching rule fired on jobs that installed nothing.",
     tech: ["TypeScript", "React", "Vite"],
-    // Replit demo URL removed. Project links are GitHub repos only.
-    // Add the repo here when it's public.
-    link: "",
+    link: "https://github.com/kahan15/Workflow-Analysis-Dashboard",
     image: "",
   },
 ];
