@@ -1,53 +1,49 @@
-# Welcome to your Lovable project
+# Portfolio
 
-## Project info
+Personal site for Kahan Jash. React + Vite, with a WebGL particle field in the hero.
 
-**URL**: https://kahans-portfolio.onrender.com
+## Run it
 
-
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open the URL Vite prints, usually http://localhost:5173.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Editing content
 
-**Use GitHub Codespaces**
+Everything you'll want to change is in `src/data.js` — name, blurb, roles,
+projects, skills, contact links. Nothing else needs touching to keep the site
+current.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To change the word the particles spell in the hero, edit the call to
+`textShape("KAHAN", COUNT)` near the top of the shape list in
+`src/ParticleField.jsx`. Keep it short; long words get small.
 
-## What technologies are used for this project?
+## How the hero works
 
-This project is built with .
+24,000 points live in a single `THREE.Points` object. Each point carries two
+positions as vertex attributes — where it is coming from and where it is going —
+and the vertex shader interpolates between them, staggered per particle so the
+cloud arrives as a wave. Four shapes cycle: the name, an order book depth
+profile, a Fibonacci sphere, and a sine surface. Click the hero to advance.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The name is produced by rasterising text to an offscreen canvas and keeping the
+pixels that landed on a glyph, so there is no font geometry or model to load.
+
+Performance notes: device pixel ratio is capped at 2, the render loop pauses
+when the hero scrolls off screen or the tab is hidden, and
+`prefers-reduced-motion` renders one static frame instead of animating.
+
+## Deploy on Render
+
+Deploy as a **Static Site**, not a Web Service. Static sites on Render are free
+and always warm — a Web Service on the free tier sleeps and can leave a visitor
+staring at a blank page for 30–50 seconds on the first request.
+
+- New → Static Site → connect this repo
+- Build command: `npm install && npm run build`
+- Publish directory: `dist`
+
+`render.yaml` is included if you'd rather set it up as a blueprint.
